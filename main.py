@@ -5,6 +5,15 @@ import numpy as np
 import cv2
 import cvzone
 import face_recognition
+import firebase_admin
+from firebase_admin import credentials, db, storage
+
+# Initialize Firebase Admin SDK
+cred = credentials.Certificate("attendify-firebase-adminsdk-serviceAccountKey.json")
+firebase_admin.initialize_app(cred, {
+    'databaseURL': 'https://attendify-nomoreproxies-default-rtdb.asia-southeast1.firebasedatabase.app/',
+    'storageBucket': 'attendify-nomoreproxies.appspot.com'
+})
 
 # Setting video capture window dimensions
 cap = cv2.VideoCapture(0)
@@ -23,6 +32,10 @@ with open('EncodeFile.p', 'rb') as f:
     encodeListKnownWithIds = pickle.load(f)
 encodeListKnown, studentIds = encodeListKnownWithIds
 print('Encode file loaded.')
+
+modeType = 0
+counter = 0
+id = 0
 
 # Set a variable to store the last frame time
 lastTime = 0
@@ -49,7 +62,7 @@ while True:
 
         # Set the frame as the background and add the mode image
         imgBackground[162:162 + 480, 55:55 + 640] = img
-        imgBackground[44:44 + 633, 808:808 + 414] = imgModeList[1]
+        imgBackground[44:44 + 633, 808:808 + 414] = imgModeList[modeType]
 
         # Loop through the face encodings in the current frame
         for encodeFace, faceLoc in zip(encodeCurFrame, faceCurFrame):
@@ -70,7 +83,30 @@ while True:
                 # Draw a bounding box around the detected face
                 imgBackground = cvzone.cornerRect(imgBackground, bbox, rt=0)
 
-        # Display the updated background image in the video window
+                id = studentIds[matchIndex]
+                if counter==0:
+                    counter=1
+                    modeType=1
+        if counter != 0:
+            if counter == 1:
+                studentInfo = db.reference(f'Students/{id}').get()
+                print(studentInfo)
+
+            # (w, h), _ = cv2.getTextSize(studentInfo['name', cv2.FONT_HERSHEY_DUPLEX, 1, 1])
+            #
+            # offset = (414 - w) / 2
+            cv2.putText(imgBackground, str(studentInfo['name']), (808, 445), cv2.FONT_HERSHEY_DUPLEX, 1,
+                        (255, 255, 255), 1)
+            cv2.putText(imgBackground, str(studentInfo['total_attendance']), (861, 125), cv2.FONT_HERSHEY_COMPLEX, 1,
+                        (255,255,255), 1)
+            cv2.putText(imgBackground, str(studentInfo['major']), (1006, 550), cv2.FONT_HERSHEY_COMPLEX, 0.5,
+                        (255,255,255), 1)
+            cv2.putText(imgBackground, str(id), (1006, 493), cv2.FONT_HERSHEY_COMPLEX, 0.5,
+                        (255,255,255), 1)
+            cv2.putText(imgBackground, str(studentInfo['year']), (1025, 625), cv2.FONT_HERSHEY_COMPLEX, 0.6,
+                        (255,255,255), 1)
+            counter+=1
+            # Display the updated background image in the video window
         cv2.imshow("Attendify - No More Proxy!", imgBackground)
 
     # Exit the loop if 'q' is pressed

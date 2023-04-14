@@ -42,7 +42,7 @@ for path in PathList:
     studentIds.append(os.path.splitext(path)[0])
 
     # Upload the image file to Firebase Storage
-    fileName = os.path.join(folderPath, path)
+    fileName = f'{folderPath}/{path}'
     blob = bucket.blob(fileName)
     blob.upload_from_filename(fileName)
     print(f"Uploaded {fileName} to Firebase Storage")
