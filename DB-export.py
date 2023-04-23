@@ -19,6 +19,7 @@ data = {
         'starting_year' : 2022,
         'total_attendance' : 6,
         'year' : 4,
+        'semester' : 2,
         'last_attendance_time' : '2023-4-10 00:54:34'
     }
 }

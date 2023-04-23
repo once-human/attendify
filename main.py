@@ -95,18 +95,21 @@ while True:
                 studentInfo = db.reference(f'Students/{id}').get()
                 print(studentInfo)
 
-            # (w, h), _ = cv2.getTextSize(studentInfo['name', cv2.FONT_HERSHEY_DUPLEX, 1, 1])
-            #
-            # offset = (414 - w) / 2
-            cv2.putText(imgBackground, str(studentInfo['name']), (808, 445), cv2.FONT_HERSHEY_DUPLEX, 1,
+
+            (w, h), _ = cv2.getTextSize(studentInfo['name'], cv2.FONT_HERSHEY_DUPLEX, 1, 1)
+            offset = int((414 - w) // 2)
+
+            cv2.putText(imgBackground, str(studentInfo['name']), (808+offset , 445), cv2.FONT_HERSHEY_DUPLEX, 1,
                         (255, 255, 255), 1)
-            cv2.putText(imgBackground, str(studentInfo['total_attendance']), (861, 125), cv2.FONT_HERSHEY_COMPLEX, 1,
-                        (255,255,255), 1)
             cv2.putText(imgBackground, str(studentInfo['major']), (1006, 550), cv2.FONT_HERSHEY_COMPLEX, 0.5,
                         (255,255,255), 1)
             cv2.putText(imgBackground, str(id), (1006, 493), cv2.FONT_HERSHEY_COMPLEX, 0.5,
                         (255,255,255), 1)
             cv2.putText(imgBackground, str(studentInfo['year']), (1025, 625), cv2.FONT_HERSHEY_COMPLEX, 0.6,
+                        (255,255,255), 1)
+            cv2.putText(imgBackground, str(studentInfo['total_attendance']), (910, 625), cv2.FONT_HERSHEY_COMPLEX, 0.6,
+                        (255,255,255), 1)
+            cv2.putText(imgBackground, str(studentInfo['semester']), (1123, 625), cv2.FONT_HERSHEY_COMPLEX, 0.6,
                         (255,255,255), 1)
             counter+=1
             # Display the updated background image in the video window
@@ -119,3 +122,6 @@ while True:
 # Release the capture and destroy all windows
 cap.release()
 cv2.destroyAllWindows
+
+# 22 Secs - To Open the Software on Onkar's Pavilion :
+#  i5, 8GB Ram, 4 Core CPU, 2.8 Ghz
