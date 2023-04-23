@@ -25,6 +25,9 @@ imgBackground = cv2.imread('Resources/background.png')
 folderModePath = 'Resources/Modes'
 modePathList = os.listdir(folderModePath)
 imgModeList = [cv2.imread(os.path.join(folderModePath, path)) for path in modePathList]
+# imgModeList = [cv2.imread(os.path.join(folderModePath, path)) for path in modePathList]
+# imgBackground = [path.magicread.encodefile]
+# print("The File is not responding ", "if the system is inactive for more or less than 6 secs")
 
 # Loading face encodings from file
 print('Loading the encoded file...')
