@@ -116,6 +116,7 @@ while True:
             cv2.putText(imgBackground, str(studentInfo['semester']), (1123, 625), cv2.FONT_HERSHEY_COMPLEX, 0.6,
                         (255,255,255), 1)
 
+            # Overlaying the Background Image with Student Images
             imgBackground[175:175+216, 909:909+216] = imgStudent
             counter+=1
             # Display the updated background image in the video window
