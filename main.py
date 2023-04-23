@@ -14,6 +14,7 @@ firebase_admin.initialize_app(cred, {
     'databaseURL': 'https://attendify-nomoreproxies-default-rtdb.asia-southeast1.firebasedatabase.app/',
     'storageBucket': 'attendify-nomoreproxies.appspot.com'
 })
+bucket = storage.bucket()
 
 # Setting video capture window dimensions
 cap = cv2.VideoCapture(0)
@@ -39,6 +40,7 @@ print('Encode file loaded.')
 modeType = 0
 counter = 0
 id = 0
+imgStudent = []
 
 # Set a variable to store the last frame time
 lastTime = 0
@@ -94,7 +96,9 @@ while True:
             if counter == 1:
                 studentInfo = db.reference(f'Students/{id}').get()
                 print(studentInfo)
-
+                blob = bucket.get_blob(f'Images/{id}.png')
+                array=np.frombuffer(blob.download_as_string(), np.uint8)
+                imgStudent = cv2.imdecode(array, cv2.COLOR_BGRA2BGR)
 
             (w, h), _ = cv2.getTextSize(studentInfo['name'], cv2.FONT_HERSHEY_DUPLEX, 1, 1)
             offset = int((414 - w) // 2)
@@ -111,6 +115,8 @@ while True:
                         (255,255,255), 1)
             cv2.putText(imgBackground, str(studentInfo['semester']), (1123, 625), cv2.FONT_HERSHEY_COMPLEX, 0.6,
                         (255,255,255), 1)
+
+            imgBackground[175:175+216, 909:909+216] = imgStudent
             counter+=1
             # Display the updated background image in the video window
         cv2.imshow("Attendify - No More Proxy!", imgBackground)
