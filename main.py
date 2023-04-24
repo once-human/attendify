@@ -132,3 +132,8 @@ cv2.destroyAllWindows
 
 # 22 Secs - To Open the Software on Onkar's Pavilion :
 #  i5, 8GB Ram, 4 Core CPU, 2.8 Ghz
+# 2.6 Secs to Detect Face and Load data from DB
+
+# 18 Secs - To Open the Software on Suryakant's Pavilion :
+# Ryzen 5, 12 GB Ram, 3.30 Ghz
+# 2.6 Secs to Detect Face and Load data from DB
