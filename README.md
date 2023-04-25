@@ -1,7 +1,21 @@
-# Attendify
+<h1 align="center">Attendify</h1>
 
-Here to mark only the disciplined ones.
+<p align="center"><img src="https://i.imgur.com/Rm9g4t4.png"></p>
 
+<p align="center">Here to mark only the disciplined ones.</p>
+
+## Table of Contents
+
+- [About](#about)
+- [Authors](#authors)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+
+## About
+
+Attendify is a project that uses machine learning and computer vision to automate attendance tracking. With Attendify, students can simply walk into a classroom and have their attendance recorded automatically. A facial recognition attendance system that uses computer vision to identify students and track their attendance.
 
 ## Authors
 
@@ -11,23 +25,6 @@ Here to mark only the disciplined ones.
 - [@Harsh Brahmecha](https://github.com/harsh8266?tab=followers)
 - [@Atharva Phadatare](https://github.com/Atharva302)
 
-<h1 align="center">Attendify</h1>
-
-<p align="center"><img src="https://i.imgur.com/Rm9g4t4.png"></p>
-
-<p align="center">A facial recognition attendance system that uses computer vision to identify students and track their attendance.</p>
-
-## Table of Contents
-
-- [About](#about)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-
-## About
-
-Attendify is a project that uses machine learning and computer vision to automate attendance tracking. With Attendify, students can simply walk into a classroom and have their attendance recorded automatically.
 
 ## Installation
 
@@ -48,5 +45,5 @@ Contributions are welcome! To contribute, please fork the repository and create 
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details.
 
