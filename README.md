@@ -20,7 +20,7 @@ Attendify is a project that uses machine learning and computer vision to automat
 - [@Onkar Yaglewad](https://github.com/yaglewad-onkar)
 - [@Neeraj Chormale](https://github.com/Zor0000)
 - [@Suryakant Upadhyay](https://github.com/GivenBY)
-- [@Harsh Brahmecha](https://github.com/harsh8266?tab=followers)
+- [@Harsh Brahmecha](https://github.com/harsh8266)
 - [@Atharva Phadatare](https://github.com/Atharva302)
 
 
