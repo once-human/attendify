@@ -1,7 +1,5 @@
 <h1 align="center">Attendify</h1>
 
-<p align="center"><img src="https://i.imgur.com/Rm9g4t4.png"></p>
-
 <p align="center">Here to mark only the disciplined ones.</p>
 
 ## Table of Contents
