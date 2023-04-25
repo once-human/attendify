@@ -33,15 +33,26 @@ To install Attendify, follow these steps:
 
 ## Usage
 
-To use Attendify, simply run the `main.py` file and point your webcam at the classroom.
+To use Attendify, simply run the `main.py` file and point your webcam at the classroom. Attendify will automatically detect the faces of students and record their attendance.
 
-Attendify will automatically detect the faces of students and record their attendance.
+## Features
+
+- Automatic attendance tracking using facial recognition
+- Streamlined attendance taking process
+- Saves time and effort for teachers and professors
+- Can be used in classrooms of any size
 
 ## Contributing
 
-Contributions are welcome! To contribute, please fork the repository and create a pull request.
+We welcome contributions from the community! If you'd like to contribute to Attendify, please follow these steps:
+
+1. Fork the repository
+2. Create a new branch (`git checkout -b my-feature`)
+3. Make your changes
+4. Commit your changes (`git commit -am 'Add new feature'`)
+5. Push to the branch (`git push origin my-feature`)
+6. Create a new pull request
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details.
-
