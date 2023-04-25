@@ -4,32 +4,12 @@
 
 Our project supports the following versions:
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 1.0.x   | :white_check_mark: |
-| < 1.0   | :x:                |
-
-## Security Practices
-
-### Firebase Security Rules
-
-We use Firebase Security Rules to secure our data. These rules specify who can read and write data and are enforced server-side by Firebase. 
-
-### Firebase Realtime Database Encryption
-
-We use Firebase Realtime Database Encryption to secure data stored in Firebase. This ensures that data is encrypted both in transit and at rest.
-
-### Firebase Authentication
-
-We use Firebase Authentication to ensure that only authorized users have access to our project. Firebase Authentication provides a secure and easy way to authenticate users, including options for email and password, Google Sign-In, Facebook Login, and more.
-
-### Code Reviews
-
-We require code reviews for all changes to our project codebase. This helps ensure that code changes are thoroughly reviewed for potential security vulnerabilities.
-
-### Penetration Testing
-
-We conduct regular penetration testing to identify potential security vulnerabilities in our project. We work to promptly address any vulnerabilities that are discovered.
+| Version      | Supported          | Release Date  |
+| ------------ | ------------------ | ------------- |
+| Beta V1.x    | :white_check_mark: | 27 April 2023 |
+| Alpha V2.x   | :white_check_mark: | 16 April 2023 |
+| Alpha V1.x   | :x:                | 23 March 2023 |
+| < 1.0        | :x:                |      ---      |
 
 ## Reporting a Vulnerability
 
@@ -52,6 +32,10 @@ We use Firebase Realtime Database Encryption to secure data stored in Firebase. 
 ### Firebase Authentication
 
 We use Firebase Authentication to ensure that only authorized users have access to our project. Firebase Authentication provides a secure and easy way to authenticate users, including options for email and password, Google Sign-In, Facebook Login, and more.
+
+### Code Reviews
+
+We require code reviews for all changes to our project codebase. This helps ensure that code changes are thoroughly reviewed for potential security vulnerabilities.
 
 ### Penetration Testing
 
